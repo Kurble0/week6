@@ -1,0 +1,16 @@
+[
+  { 
+    "allergies": "pollen",
+    "medical": "heart condition",
+    "id": 1
+  },
+  { "allergies": "penuts",
+    "medical": "athsma",
+    "id": 2
+  },
+  { 
+    "allergies": "pineapple",
+    "medical": "high blood pressure",
+    "id": 3
+  }
+]

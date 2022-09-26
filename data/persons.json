@@ -1,21 +1,21 @@
 [
   { 
-    "name": "Jane Coder",
-    "email": "jane@coder.com",
+    "name": "Jim Boy",
+    "email": "Jim@Boy.com",
     "phone": "800-456-1234",
     "birthdate": "04/01/2020",
     "id": 1
   },
   { 
-    "name": "Data Person",
-    "email": "data@person.com",
+    "name": "Dana Preson",
+    "email": "dana@preson.com",
     "phone": "800-123-4567",
     "birthdate": "01/02/2001",
     "id": 2
   },
   { 
-    "name": "George Scripter",
-    "email": "george@scripter.com",
+    "name": "Gregg Scripter",
+    "email": "gregg@scripter.com",
     "phone": "800-876-3090",
     "birthdate": "12/01/2010",
     "id": 3

@@ -28,6 +28,8 @@ export default function Entry({ itemData }) {
           <h5 className="card-title">{itemData.name}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{itemData.phone}</h6>
           <p className="card-text">{itemData.birthdate}</p>
+          <p className="card-text"> Allergies- {itemData.allergies}</p>
+           <p className="card-text"> Medical- {itemData.medical}</p>
           <a href={'mailto:' + itemData.email} className="card-link">{itemData.email}</a>
         </div>
       </article>
