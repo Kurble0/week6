@@ -1,4 +1,16 @@
-// API to return ONE matching document in "resources" firestore collection by query
+
+// if statement that was used to bring up a null insted of a error message.
+/*
+    if(req.query.name) { 
+      const snapshot = await collectionRef.where("name", "==", req.query.name).get();
+    }
+     else {
+    const snapshot= {empty: true};
+    } */
+    
+
+
+// API to return ALL documents in "resources" firestore collection
 
 // import our firebase lib, returns firestore db in firebase var
 import firebase from "../../lib/firebase";
@@ -7,24 +19,17 @@ import firebase from "../../lib/firebase";
 export default async function handler(req, res) {
   // wrap try around our code to catch any errors that happen
   try {
-    // console.log( req.query.name );
-
-    // retrieve ONE document matched by "name" field
-    const collectionRef = firebase.collection("resources");
-    const snapshot = await collectionRef.where("name", "==", req.query.name).get();
-
-    // return all data from firestore document as json
-    let output;
-    if (!snapshot.empty) {
-      snapshot.forEach(
-        (doc) => {
-          // console.log(doc.id, '=>', doc.data() )
-          output = { id:doc.id, data:doc.data() };
-        }
-      );
-    } else {
-      output = null;
-    }
+    // retrieve ALL documents from our firestore collection named "resources"
+    const snapshot = await firebase.collection("resources").get();
+    
+    // loop thru and build out an array of all data from firestore collection documents
+    let output = [];
+    snapshot.forEach(
+      (doc) => {
+        // console.log(doc.id, '=>', doc.data() )
+        output.push( { id:doc.id, data:doc.data() } );
+      }
+    );
 
     // return OK http code and JSON object with all firestore data
     res.statusCode = 200;
